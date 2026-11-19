@@ -101,6 +101,9 @@ class SelfdriveD(CruiseHelper):
     ignore = self.sensor_packets + self.gps_packets + ['alertDebug', 'lateralManeuverPlan'] + ['modelDataV2SP', 'longitudinalPlanSP']
     if SIMULATION:
       ignore += ['cabinCameraState', 'managerState']
+
+    ignore += ['driverMonitoringState']
+    
     if REPLAY:
       # no vipc in replay will make them ignored anyways
       ignore += ['narrowRoadCameraState', 'wideRoadCameraState']
